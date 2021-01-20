@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1> <img src="https://www.pngitem.com/pimgs/m/483-4839853_pokeballs-pokemon-master-ball-png-transparent-png.png" class="pokebola-img" alt=""> Pokedex </h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Busca tu pokemon" name="filterPost" [(ngModel)]="filterPost">
+            </div>
+        </div>
+    </div>
+    <input type="button" value="Mi coleccion" id="pokemons-user-list" (click)="showPokemons()">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Pokemon</th>
+                        <th></th>
+                        <th>¡Lo tengo!</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pokemon-list" *ngFor="let pokemon of pokemons | filter:filterPost">
+                        <td>{{pokemon.id}}</td>
+                        <td>{{pokemon.name}}</td>
+                        <td><img class="pokemon-imagen" src="{{pokemon.sprite}}" alt=""></td>
+
+                        <td><input type="button" id="button" value="¡Capturado!" (click)="savePokemon(pokemon)" [disabled]="false"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

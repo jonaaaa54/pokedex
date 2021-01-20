@@ -1,0 +1,16 @@
+.pokemon-imagen {
+    border-radius: 50%;
+    align-items: center;
+    height: 50px;
+    width: 80px;
+}
+
+.pokebola-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.pokemon-list:hover {
+    border: 2px solid red;
+}
